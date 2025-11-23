@@ -1,0 +1,75 @@
+A: Good morning, you're through to James in the Fraud Prevention team at [Bank Name]. How can I help you today?
+
+B: Oh, thank goodness I got through to someone. James, I'm Mrs. Davies, my account number is [Customer Account Number], and I'm honestly so stressed. I've just checked my online banking, my credit card statement, and there's a huge payment, a really big one, that I absolutely did not make. It's for... well, it's just gone!
+
+A: I understand this must be very concerning, Mrs. Davies. Please try to stay calm, I'm here to help you. Can you tell me more about what you're seeing? What's the amount of the payment and when did it appear?
+
+B: It's for eight thousand five hundred pounds! Eight thousand five hundred! And it says it went out yesterday evening, around six o'clock. I've never made a payment like that. I don't even know who it's to. It's just listed as a 'Faster Payment transfer'. I use that card for my groceries and a few bills, not for thousands of pounds!
+
+A: Thank you for that information, Mrs. Davies. Before we go into the details of the transaction, for security purposes, could you please confirm your full name, date of birth, and the first and last line of your address?
+
+B: Yes, of course. My name is Eleanor Davies, born on the 12th of May, 1968. My address is 14 Elm Tree Avenue, Littleworth, LS23 6AB.
+
+A: Thank you, Mrs. Davies. Just one more security question: Can you tell me the last two digits of your telephone banking passcode, please?
+
+B: It's 4-9.
+
+A: Perfect, thank you. I've accessed your credit card account now, Mrs. Davies. I can indeed see a Faster Payment transfer for eight thousand five hundred pounds initiated yesterday evening at 18:07, to a new payee. This is certainly a significant amount. To help me understand what might have happened, could you tell me when you last logged into your online banking account yourself, before yesterday evening?
+
+B: Oh, I log in quite regularly, maybe every few days. I think I checked it on Tuesday morning, just to check my balance. Everything was fine then. But yesterday... well, I got an email. It looked like it was from the bank, saying there was a security alert, that my account might be compromised and I needed to log in immediately to verify some details.
+
+A: I see. And did you click on a link within that email, Mrs. Davies?
+
+B: Yes, I did. It looked very official, the bank logo and everything. It took me to a page that looked exactly like the bank's login page. It asked for my credit card number, my password, and then it asked for... it asked for a code. A one-time passcode, I think it was called. It said it was to verify my identity.
+
+A: Thank you for being honest, Mrs. Davies, that's very helpful. It sounds like you may have unfortunately been targeted by a sophisticated phishing scam. When you entered your details on that website, including your password and the one-time passcode, you inadvertently gave a fraudster access to your online banking. The website you saw was not our genuine banking site.
+
+B: Oh no! So that's what happened? I thought it was real! It looked so convincing. I'm so stupid!
+
+A: Please don't say that, Mrs. Davies. These fraudsters are extremely clever and make their fake communications look very authentic. Many people fall victim to these scams. What likely happened is that after you entered your details, the fraudster then used those details to log into your actual account. I'm seeing multiple login attempts from an unfamiliar device around the time you mentioned receiving that email. They then quickly added a new payee and initiated this Faster Payment transfer from your available credit limit.
+
+B: A new payee? I didn't add anyone! Who is it to?
+
+A: The payee name on our system for this transfer is listed as 'J. Smith'. Do you recognise that name or have any dealings with anyone by that name, Mrs. Davies?
+
+B: No, absolutely not! I don't know any J. Smith. This is terrible. Can we get the money back? It's my credit card, but it's still my money, isn't it? My limit is ten thousand, so they've taken almost all of it!
+
+A: I understand your urgency, Mrs. Davies. We need to act quickly. My immediate priority is to secure your accounts and then investigate this transaction. Firstly, I need to cancel your current credit card immediately to prevent any further unauthorised activity. This will also block your existing online banking access for that card. I will then arrange for a new card to be sent out to you, which should arrive within 3 to 5 working days. Does that sound okay?
+
+B: Yes, please, cancel it all. Just stop them!
+
+A: Alright. I'm cancelling your card now. Regarding the Faster Payment, once a Faster Payment has been sent, it generally processes almost instantly, making it very difficult to recall. However, we will immediately raise a fraud investigation and attempt to contact the receiving bank. We will request a recall of the funds, but I must be transparent with you that success is not guaranteed, especially if the funds have already been moved on by the fraudster.
+
+B: So it's gone? Just gone? Eight and a half thousand pounds?
+
+A: We will do everything within our power to recover the funds, Mrs. Davies. Our dedicated fraud investigation team will handle this. They will liaise with the receiving bank and follow the industry guidelines set by UK Finance for APP (Authorised Push Payment) fraud. They will also review all activity on your account. This process can take some time, potentially up to 15 working days for an initial assessment, but we will keep you informed every step of the way.
+
+B: What else do I need to do? I'm so worried about my other accounts.
+
+A: That's a very good question. Since you entered your password on a fraudulent site, it's crucial that you change your online banking password for *all* your accounts with us, and indeed any other online services where you might have used the same password. I recommend doing this from a secure device, perhaps a different computer or your mobile phone, once this call is finished and your online access has been reset. Have you used the same password for any other banking or important online accounts?
+
+B: Oh, probably. I'm terrible with remembering passwords.
+
+A: I understand. For now, I will block your current online banking access for all your accounts as a precautionary measure. You will need to re-register for online banking once we have confirmed everything is secure, and you will create a completely new username and password then. This ensures the fraudster cannot use any previously compromised details.
+
+B: Okay, okay. That makes sense. What about my phone? I used my phone to click on that link.
+
+A: Thank you for mentioning that, Mrs. Davies. It's possible your device could have been compromised with malware. After this call, I strongly advise you to run a full security scan on your phone and any other devices you use for online banking. If you're unsure how to do this, your mobile provider or a trusted IT support service might be able to assist. Also, please delete that suspicious email and any related text messages.
+
+A: I'm just completing the internal fraud report now. I've logged this as an urgent account takeover case. Your fraud reference number for this case is FP20240509-DAVIES-001. You'll also receive a letter from us within the next few days confirming the actions we've taken and outlining the next steps for the investigation.
+
+B: So, I just wait now?
+
+A: Our fraud team will be in touch directly if they require any further information from you. In the meantime, please monitor your postal mail for your new card and any communication from us. Remember, we will never ask you for your full password or a one-time passcode over the phone, via email, or in a text message. If you receive any suspicious calls, emails, or texts going forward, please do not respond and contact us directly using the number on the back of your card or our official website.
+
+B: I'll be much more careful now, I promise. This has been such a shock.
+
+A: I completely understand, Mrs. Davies. It's a very distressing experience, and I'm very sorry this has happened to you. Please know that we are taking this very seriously and will do our best to resolve it. Is there anything else I can help you with today?
+
+B: No, I think that's everything for now. Thank you, James. You've been very helpful, even though the news isn't great.
+
+A: You're most welcome, Mrs. Davies. Remember your fraud reference number is FP20240509-DAVIES-001. If you have any further concerns, please don't hesitate to call us back on this number. We're available 24/7 for fraud-related queries. Take care.
+
+B: You too. Goodbye.
+
+A: Goodbye, Mrs. Davies.

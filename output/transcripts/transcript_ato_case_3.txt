@@ -1,0 +1,89 @@
+A: Thank you for calling National Bank, my name is Sarah. How can I help you today?
+
+C: Hi Sarah, I'm calling because I'm really worried. I just got a text message, well, actually it was an email, saying a new credit card has been requested for my account and it's being sent to an address I don't recognise. I definitely didn't request a new card. And honestly, I've been getting a lot of weird texts and emails lately, some looking like they're from the bank, asking me to click links. I'm so anxious about this.
+
+A: I understand your concern, Mr/Ms [Customer Last Name]. That sounds very alarming. Please don't worry, we'll get to the bottom of this. Can I first take your full name and date of birth to verify your identity?
+
+C: Yes, it's [Customer Name], and my date of birth is [DD/MM/YYYY].
+
+A: Thank you, Mr/Ms [Customer Last Name]. And could you also confirm the first and last line of your address, please?
+
+C: [Customer House Number/Street Name], [Customer Postcode].
+
+A: Perfect, thank you. Just one more security question for your credit card account. Could you please tell me the last transaction you made on that card, including the approximate amount and date?
+
+C: Uhm, let me see... I bought groceries at Tesco yesterday, that was about 45 pounds, on the 10th.
+
+A: Thank you, that all matches our records. So you're concerned about a new credit card request and a delivery address you don't recognise, correct?
+
+C: Exactly. The email said it was being sent to a place in Birmingham, but I live in Manchester! And I've never lived in Birmingham. It just feels all wrong. And those other emails, they looked so real, telling me there were suspicious payments and to verify my details. I didn't click on them, thankfully, but it's all making me feel very uneasy.
+
+A: Thank you for bringing this to our attention immediately, and it's very good that you didn't click on any suspicious links. I'm just checking your credit card account details now. I can see here, unfortunately, that a replacement credit card was indeed requested yesterday, on the 10th, and the delivery address entered is indeed in Birmingham. I'm also seeing some recent login activity that looks unusual.
+
+C: Oh my God, it's true then! What does that mean? Has someone got into my account?
+
+A: It does appear that way, Mr/Ms [Customer Last Name]. We're seeing multiple login attempts over the past few days, some successful, from devices and locations that are not typical for your account. This is a strong indicator of unauthorised access.
+
+C: But how? I'm so careful with my passwords. I don't understand.
+
+A: I completely appreciate your concern. These types of incidents often happen when credentials, like usernames and passwords, are stolen from a completely separate, third-party data breach, not directly from the bank. Fraudsters then try these stolen credentials across many different websites, including banking sites, hoping to find a match. This is often referred to as a credential stuffing attack. It seems they were successful in accessing your credit card account.
+
+C: So someone used my password from somewhere else to get into my bank account? That's terrifying.
+
+A: It is, and I assure you we take this very seriously. Now, to help me understand the full scope, could you tell me when you last logged into your online banking yourself for this credit card account?
+
+C: I think it was... maybe last week? I just checked my balance quickly. I'm not sure of the exact day, maybe Tuesday or Wednesday.
+
+A: That's perfectly fine. And when you log in, do you ever share your login details, like your password or any One-Time Passcodes, with anyone? Or respond to texts or calls asking for them?
+
+C: Absolutely not. I know better than that. I always keep my PIN and passwords secret.
+
+A: That's excellent to hear. And what device do you typically use to access your online banking? Is it a personal laptop, a mobile phone, or a work computer?
+
+C: Mostly my personal laptop at home, sometimes my phone if I'm out.
+
+A: Okay, thank you. I need to confirm a few things. Did you receive any One-Time Passcodes recently that you didn't request, or that seemed to relate to a new card application or address change?
+
+C: I might have, yes. I did get a text with a code a few days ago, but I just ignored it because I wasn't doing anything. I thought it was just another one of those scam texts.
+
+A: That's a crucial piece of information, thank you. It's likely the fraudster generated that OTP to authorise the new card request. Based on what you've told me and what I'm seeing on your account, it's highly probable that your credit card account has been compromised. The fraudster has logged in, requested a new card, and arranged for it to be delivered to what we call a 'mule address' – an address they can intercept the card from, rather than the card going directly to you. Their intention would be to activate that new card and use it for unauthorised transactions.
+
+C: Oh my goodness. So they haven't used the card yet, but they're going to? What can we do?
+
+A: We need to act immediately. First, I am going to block your current credit card right now to prevent any further potential misuse. This means your existing card will no longer work.
+
+C: Okay, do it. Please.
+
+A: Done. Your card is now blocked. Secondly, I am cancelling the fraudulent replacement card request that was sent to the Birmingham address. That card will not be delivered or activated.
+
+C: Thank goodness for that.
+
+A: Now, to secure your account going forward, it is absolutely essential that you change your online banking password for this account, and any other accounts you hold with us, as soon as we finish this call. Please choose a strong, unique password that you don't use anywhere else.
+
+C: I will, I promise. I'll change everything.
+
+A: I also strongly recommend that you check your credit file with the major credit reference agencies, like Experian or Equifax, in the coming weeks, just to ensure no new credit facilities have been opened in your name. This is a standard recommendation from organisations like UK Finance when an account takeover is suspected.
+
+C: Right, I'll do that. So what happens next with the fraud investigation?
+
+A: We will be initiating a full fraud investigation into this incident. We'll review all the login activity and the details of the fraudulent card request. You will receive an email confirmation of this call and the actions we've taken, along with a fraud case reference number. Please keep this safe. We will contact you if we need any further information.
+
+C: And I won't be liable for any transactions if they somehow manage to use the old card or something, will I?
+
+A: No, Mr/Ms [Customer Last Name], as you've reported this promptly and haven't shared your security details, you will not be liable for any unauthorised transactions that may have occurred due to this fraud. Our bank's fraud guarantee covers this. We appreciate you contacting us so quickly.
+
+C: That's a huge relief. I was so worried about that.
+
+A: Is there anything else I can help you with regarding this today, or any other questions you have?
+
+C: No, I think you've covered everything. Just glad we caught it in time.
+
+A: I'm glad too. So, just to recap, I have blocked your existing credit card, cancelled the fraudulent replacement card request, and initiated a fraud investigation. You will receive a reference number for this. Please remember to change your online banking password immediately after this call, and monitor your credit file. If you notice any other suspicious activity on any of your accounts, or if you remember any more details that might be relevant, please don't hesitate to call our fraud team back on the number on the back of your card.
+
+C: Thank you so much, Sarah. You've been really helpful.
+
+A: You're very welcome, Mr/Ms [Customer Last Name]. Thank you for calling National Bank, and have a good day.
+
+C: You too. Goodbye.
+
+A: Goodbye.

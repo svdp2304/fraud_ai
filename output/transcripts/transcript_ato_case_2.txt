@@ -1,0 +1,59 @@
+A: Hello, you are through to Sarah at UK Bank. How can I help you today?
+
+B: Oh, thank goodness. Sarah, I'm Mr. Davies. I'm calling because I'm seeing some really strange activity on my credit card account, and I've been getting some very worrying texts and emails. I'm quite anxious about it all.
+
+A: I understand, Mr. Davies. Please try to stay calm. I'll do my best to help you. To verify your identity, could you please provide your full name, date of birth, and the first line of your address?
+
+B: Yes, of course. It's John Davies, born [Date of Birth], [First Line of Address].
+
+A: Thank you, Mr. Davies. And for security, could you confirm your account sort code please?
+
+B: It's [Sort Code].
+
+A: Thank you. I have your account details open now. You mentioned unusual activity and worrying communications. Could you please tell me exactly what you've noticed?
+
+B: Well, yesterday evening, I saw two really big transactions on my credit card statement online. One for 900 pounds to 'Tech Gadget Store' and another for 750 pounds to 'Online Electronics'. I definitely did not make those purchases. And then I remembered the texts. I've been getting these strange texts, supposedly from the bank, saying there was a security issue.
+
+A: I see. And did you interact with any of these texts or calls, Mr. Davies?
+
+B: Yes, that's the thing. Last week, I got a call. They said they were from bank security, doing a 'security review' on my account because of some suspicious activity. They sounded very official.
+
+A: And what information did they ask for during that call, Mr. Davies? It's very important you tell me everything, no matter how small.
+
+B: Well, they confirmed some of my details, and then they asked for part of my credit card number... and then they said they needed a One-Time Passcode, an OTP, to 'verify' something and stop a fraudulent transaction. I know now I shouldn't have, but I was worried and they were very convincing. I gave them the OTP.
+
+A: Thank you for being honest, Mr. Davies. That's crucial information. Did you receive that OTP via text message to your registered phone?
+
+B: Yes, I did. I read it out to them.
+
+A: Right. I'm looking at your account now. I can confirm those two high-value transactions you mentioned. I also see that your registered contact phone number and email address were changed on our system yesterday afternoon. Did you authorise these changes yourself?
+
+B: What? No! Absolutely not! That explains why I wasn't getting any alerts about these purchases! Oh, this is dreadful.
+
+A: I understand your concern, Mr. Davies. This aligns with a known fraud modus operandi. Fraudsters often use vishing calls to trick customers into revealing security details like OTPs, which they then use to pass security checks, change contact details, and make unauthorised online purchases. When did you last log in to your online banking yourself, Mr. Davies?
+
+B: About three days ago, before all this started. Everything seemed normal then.
+
+A: And what device do you usually use to access your online banking?
+
+B: My home laptop. It's usually very secure.
+
+A: Thank you for providing these details. Mr. Davies, I am immediately blocking your credit card to prevent any further unauthorised transactions. I'm also temporarily suspending your online banking access for your protection while we investigate this. We will launch a full fraud investigation into these unauthorised transactions and the account takeover.
+
+B: Will I get my money back? I can't afford these charges.
+
+A: We will investigate this thoroughly, Mr. Davies. We aim to resolve these cases as quickly as possible. We will send you a new credit card, which should arrive within 3 to 5 working days. In the meantime, please remember that UK Bank, or any legitimate financial institution, will never ask you for your full card number, your PIN, or a One-Time Passcode over the phone or via text. This is a key warning often highlighted by organisations like UK Finance.
+
+B: I feel so foolish.
+
+A: Please don't, Mr. Davies. These fraudsters are very sophisticated and use manipulative tactics. It's important that you update any security software on your laptop and remain vigilant against any further suspicious communications. We will communicate updates on your case via post and secure messages within your online banking once it's reactivated.
+
+B: Okay. Thank you, Sarah.
+
+A: You're welcome. I've logged this as a priority fraud case. Your reference number for this incident is FAD-2024-9876. Please keep this safe. Is there anything else I can assist you with today?
+
+B: No, I think that's everything for now. Thank you for your help.
+
+A: You're welcome, Mr. Davies. We'll be in touch as soon as we have an update on your investigation. Goodbye for now.
+
+B: Goodbye.

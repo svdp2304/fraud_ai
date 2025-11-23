@@ -16,9 +16,177 @@ from datetime import datetime
 import json
 import logging
 import re
+from dotenv import load_dotenv
+
+#######
+# ---------------------------------------------------------
+# AUTO-ML BACKGROUND SIMULATION FUNCTIONS
+# ---------------------------------------------------------
+from sklearn.datasets import make_classification
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import roc_auc_score
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import roc_curve
+from sklearn.metrics import (
+    precision_score, recall_score, accuracy_score,
+    roc_auc_score, confusion_matrix
+)
+
+def simulate_training_data(n_samples=5000, n_features=20):
+    """Generate synthetic fraud dataset."""
+    X, y = make_classification(
+        n_samples=n_samples,
+        n_features=n_features,
+        n_informative=8,
+        n_redundant=4,
+        n_clusters_per_class=1,
+        weights=[0.85, 0.15],  # fraud imbalance
+        random_state=42
+    )
+    return train_test_split(X, y, test_size=0.3, random_state=42)
+
+
+def train_existing_model(X_train, y_train):
+    """Simulates existing production model."""
+    model = LogisticRegression(max_iter=200)
+    model.fit(X_train, y_train)
+    return model
+
+
+def train_candidate_model(X_train, y_train):
+    """Simulates a stronger AutoML model."""
+    model = RandomForestClassifier(
+        n_estimators=150,
+        max_depth=7,
+        random_state=42
+    )
+    model.fit(X_train, y_train)
+    return model
+
+
+def evaluate_models(existing_model, candidate_model, X_test, y_test):
+    """Compute AUC scores for both models."""
+    existing_auc = roc_auc_score(y_test, existing_model.predict_proba(X_test)[:, 1])
+    candidate_auc = roc_auc_score(y_test, candidate_model.predict_proba(X_test)[:, 1])
+    return existing_auc, candidate_auc
+
+
+def generate_auc_curves(existing_model, candidate_model, X_test, y_test):
+    """Generate real AUC curve coordinates."""
+    fpr_e, tpr_e, _ = roc_curve(y_test, existing_model.predict_proba(X_test)[:, 1])
+    fpr_c, tpr_c, _ = roc_curve(y_test, candidate_model.predict_proba(X_test)[:, 1])
+    return fpr_e, tpr_e, fpr_c, tpr_c
+
+# ---------------------------------------------------------
+# SHAP FEATURE IMPORTANCE FOR CANDIDATE MODEL
+# ---------------------------------------------------------
+def compute_shap_importance(model, X_train):
+    """Compute SHAP feature importance for any tree model with any SHAP output shape."""
+    explainer = shap.TreeExplainer(model)
+    shap_values = explainer.shap_values(X_train)
+
+    shap_values = np.array(shap_values)
+
+    # Case 1: shap_values is list → pick class 1
+    if isinstance(shap_values, list):
+        shap_values = shap_values[1]   # (samples, features)
+
+    # Case 2: shap_values is 3D → (samples, features, classes)
+    if shap_values.ndim == 3:
+        # Select class 1
+        shap_values = shap_values[:, :, 1]   # now (samples, features)
+
+    # Final check — expect 2D now
+    if shap_values.ndim != 2:
+        raise ValueError(f"SHAP array has unexpected shape after reduction: {shap_values.shape}")
+
+    # Compute mean absolute SHAP per feature
+    importance = np.abs(shap_values).mean(axis=0)
+
+    return importance  # always shape (features,)
+
+# ---------------------------------------------------------
+# BUSINESS KPI CALCULATIONS
+# ---------------------------------------------------------
+
+def compute_business_kpis(y_true, y_pred_prob, threshold=0.5):
+    """Compute various business KPIs used in fraud analytics."""
+    
+    # Convert probabilities to binary prediction
+    y_pred = (y_pred_prob >= threshold).astype(int)
+
+    # Confusion matrix
+    tn, fp, fn, tp = confusion_matrix(y_true, y_pred).ravel()
+
+    # Fraud detection rate (recall)
+    fdr = tp / (tp + fn) if (tp + fn) > 0 else 0
+
+    # False positive rate
+    fpr = fp / (fp + tn) if (fp + tn) > 0 else 0
+
+    # Precision
+    precision = tp / (tp + fp) if (tp + fp) > 0 else 0
+
+    # Accuracy
+    accuracy = accuracy_score(y_true, y_pred)
+
+    # AUC
+    auc = roc_auc_score(y_true, y_pred_prob)
+
+    # KS statistic
+    # max difference between TPR and FPR
+    ks = max(abs(fdr - fpr), 0)
+
+    # Lift at top 10%
+    n = len(y_pred_prob)
+    cutoff = int(n * 0.10)
+
+    sorted_indices = np.argsort(y_pred_prob)[::-1]
+    top_decile_fraud = y_true[sorted_indices][:cutoff]
+    lift = (top_decile_fraud.mean()) / (y_true.mean()) if y_true.mean() > 0 else 0
+
+    return {
+        "AUC": auc,
+        "FDR (Recall)": fdr,
+        "False Positive Rate": fpr,
+        "Precision": precision,
+        "Accuracy": accuracy,
+        "Lift (Top 10%)": lift,
+        "KS Statistic": ks
+    }
+
+# ---------------------------------------------------------
+# STEP 4 - DEVELOPER APPROVAL STORAGE (PROTOTYPE)
+# ---------------------------------------------------------
+
+def save_model_decision(transcript_id, decision, notes="", model_type="AutoML"):
+    """Save developer decision for model selection."""
+    decision_path = os.path.join(output_dir, "model_decisions.csv")
+
+    # Create DataFrame row
+    row = pd.DataFrame([{
+        "transcript_id": transcript_id,
+        "decision": decision,
+        "model_type": model_type,
+        "notes": notes,
+        "timestamp": datetime.now().isoformat()
+    }])
+
+    # Append or create
+    if os.path.exists(decision_path):
+        existing = pd.read_csv(decision_path)
+        updated = pd.concat([existing, row], ignore_index=True)
+        updated.to_csv(decision_path, index=False)
+    else:
+        row.to_csv(decision_path, index=False)
+
+    return decision_path
+
+#######
 
 # Define home path for output and repository (modify this for your system)
-HOME_PATH = '/Users/shubhadeepdas/Documents/data_science/projects/genai_transcript'  # Change this to your base directory
+HOME_PATH = '/Users/shubhadeepdas/Documents/data_science/projects/hackaidea'  # Change this to your base directory
 output_dir = os.path.join(HOME_PATH, 'output')
 repo_path = os.path.join(output_dir, 'feature_repository')
 
@@ -35,7 +203,8 @@ os.makedirs(output_dir, exist_ok=True)
 os.makedirs(repo_path, exist_ok=True)
 
 # Initialize Gemini API for generating MO and features
-GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
+load_dotenv()
+GOOGLE_API_KEY = os.getenv('GEMINI_API_KEY')
 if not GOOGLE_API_KEY:
     st.error("GOOGLE_API_KEY not found. Set it using 'export GOOGLE_API_KEY=your-key'.")
     st.stop()
@@ -288,13 +457,12 @@ def save_to_feature_repository(approved_features, transcript_id):
     else:
         history_df = approved_features[['feature_id', 'feature_name', 'description', 'required_raw_variables', 'importance_score', 'created_timestamp']]
     history_df.to_csv(history_path, index=False)
-    history_df.to_parquet(os.path.join(repo_path, 'features_history.parquet'), index=False)
     
     # Update latest features
     existing_features_df = pd.concat([existing_features_df, approved_features[['feature_id', 'feature_name', 'description', 'required_raw_variables', 'importance_score', 'created_timestamp']]], ignore_index=True)
     existing_features_df.to_csv(latest_path, index=False)
-    existing_features_df.to_parquet(os.path.join(repo_path, 'features_latest.parquet'), index=False)
     logger.info(f"Saved approved features for {transcript_id} to repository: {approved_features[['feature_name']].to_dict()}")
+
 
 # Configure Streamlit page layout
 # Purpose: Sets up a wide layout for the dashboard with a title
@@ -443,5 +611,133 @@ if uploaded_file:
             st.form_submit_button("Approve Selected Features", on_click=handle_form_submission, args=(transcript_id,))
     else:
         st.error("Cannot approve features: No valid features available. Check dashboard.log for details.")
+
+    # -------------------------------------------------------------------------
+    # (Prototype Preview) AutoML Model Retraining – STEP 1
+    # -------------------------------------------------------------------------
+    st.markdown("---")
+    
+    with st.expander("AutoML Model Retraining (Prototype Preview)"):
+
+        st.subheader("AutoML Retraining Simulation (Real Model Run)")
+
+        if st.button("Run AutoML Simulation", key=f"automl_real_{transcript_id}"):
+    
+            st.info("Generating synthetic training data...")
+            X_train, X_test, y_train, y_test = simulate_training_data()
+    
+            st.info("Training existing production model...")
+            existing_model = train_existing_model(X_train, y_train)
+    
+            st.info("Training AutoML candidate model...")
+            candidate_model = train_candidate_model(X_train, y_train)
+    
+            st.info("Evaluating models...")
+            existing_auc, candidate_auc = evaluate_models(
+                existing_model, candidate_model, X_test, y_test
+            )
+    
+            st.success("AutoML simulation completed!")
+    
+            # Show KPI table
+            st.markdown("### KPI Comparison (Real Computation)")
+            kpi_df = pd.DataFrame({
+                "Metric": ["AUC Score"],
+                "Existing Model": [round(existing_auc, 4)],
+                "Candidate Model": [round(candidate_auc, 4)]
+            })
+            st.table(kpi_df)
+    
+            # AUC curves
+            st.markdown("### AUC Curve Comparison")
+            fpr_e, tpr_e, fpr_c, tpr_c = generate_auc_curves(
+                existing_model, candidate_model, X_test, y_test
+            )
+    
+            fig, ax = plt.subplots(figsize=(6, 4))
+            ax.plot(fpr_e, tpr_e, label="Existing Model")
+            ax.plot(fpr_c, tpr_c, label="AutoML Candidate")
+            ax.plot([0, 1], [0, 1], 'k--', alpha=0.3)
+            ax.set_xlabel("False Positive Rate")
+            ax.set_ylabel("True Positive Rate")
+            ax.legend()
+            st.pyplot(fig)
+
+            # -----------------------------------------------------
+            # STEP 2: SHAP FEATURE IMPORTANCE FOR CANDIDATE MODEL
+            # -----------------------------------------------------
+            st.markdown("### SHAP Feature Importance (Candidate Model)")
+    
+            st.info("Computing SHAP values for the AutoML candidate model...")
+    
+            # Construct SHAP importance table
+            importance = compute_shap_importance(candidate_model, X_train)
+
+            feature_names = [f"feat_{i}" for i in range(X_train.shape[1])]
+            
+            shap_df = pd.DataFrame({
+                "Feature": feature_names,
+                "SHAP Importance": importance
+            }).sort_values(by="SHAP Importance", ascending=False)
+
+    
+            st.write("Top Important Features (Candidate Model)")
+            st.table(shap_df.head(10))
+    
+            # Optional: SHAP bar plot
+            fig2, ax2 = plt.subplots(figsize=(6, 4))
+            ax2.barh(shap_df["Feature"].head(10), shap_df["SHAP Importance"].head(10))
+            ax2.invert_yaxis()
+            ax2.set_xlabel("SHAP Importance")
+            ax2.set_title("Top 10 Feature Importances")
+            st.pyplot(fig2)
+
+            # ---------------------------------------------------------
+            # STEP 3: BUSINESS KPI COMPARISON (REAL METRICS)
+            # ---------------------------------------------------------
+            st.markdown("### Business KPI Comparison (Real Computation)")
+            
+            st.info("Computing business KPIs for both models...")
+            
+            # Predict probabilities for both models
+            existing_prob = existing_model.predict_proba(X_test)[:, 1]
+            candidate_prob = candidate_model.predict_proba(X_test)[:, 1]
+            
+            existing_kpis = compute_business_kpis(y_test, existing_prob)
+            candidate_kpis = compute_business_kpis(y_test, candidate_prob)
+            
+            # Build comparison table
+            kpi_compare_df = pd.DataFrame({
+                "Metric": existing_kpis.keys(),
+                "Existing Model": existing_kpis.values(),
+                "Candidate Model": candidate_kpis.values()
+            })
+            
+            st.table(kpi_compare_df)
+            
+            st.success("Business KPI comparison completed!")
+
+    # ---------------------------------------------------------
+    # STEP 4: DEVELOPER APPROVAL PANEL
+    # ---------------------------------------------------------
+    st.markdown("### Developer Approval (Prototype)")
+    st.write("Review the candidate model and approve or decline based on business and technical confidence.")
+
+    colA, colB = st.columns(2)
+
+    with colA:        
+        if st.button("Approve Candidate Model", key=f"approve_model_{transcript_id}"):
+            save_model_decision(
+                transcript_id=transcript_id,
+                decision="Approved",
+                model_type="AutoML",
+                notes="Candidate model approved for next stage of governance."
+            )
+            st.success("Candidate model approved! Proceed to governance.")
+            
+    with colB:
+        if st.button("Decline Candidate Model", key=f"decline_model_{transcript_id}"):
+            st.warning("Candidate model declined. Please revisit.")
+
 else:
     st.info("Please upload a transcript file to begin analysis.")

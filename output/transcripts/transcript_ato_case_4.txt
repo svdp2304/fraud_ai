@@ -1,0 +1,48 @@
+A: Good morning, you're through to the Fraud Prevention Team. My name is Sarah, how can I help you today?
+C: Sarah, thank goodness I got through. I think my bank account has been hacked. I'm absolutely furious, and honestly, a bit scared.
+
+A: I understand this is urgent, Mr. Miller. First, for security, could I please take your full name and date of birth?
+C: David Miller, D A V I D Miller, M I L L E R. My date of birth is the 15th of March, 1978.
+A: Thank you, Mr. Miller. And could you confirm your postcode for me, please?
+C: GU1 2AB.
+A: Perfect. To protect your account further, I just need to ask one of your security questions. Can you tell me your mother's maiden name?
+C: Yes, it's Smith. S M I T H.
+A: Thank you, Mr. Miller. I've successfully verified your identity. Now, please tell me what's happened.
+
+C: Well, it started yesterday evening. My phone suddenly lost all signal. I thought it was just a network issue, you know, a temporary glitch. I tried restarting it a few times, but nothing. Then this morning, I woke up to a barrage of texts, not on my phone, but on my wife's phone, which I used to check emails. They were supposedly from the bank, saying there were suspicious logins and transactions. I even saw an email earlier this week, looked like it was from you, asking me to verify some details. I thought it was spam, but now...
+A: I see. So your phone lost signal yesterday evening, and you've seen texts and emails today, not on your usual number, referring to suspicious activity. Is that correct?
+C: Yes, exactly. And when I finally managed to get onto my online banking this morning using my laptop, there are transactions there I definitely didn't make. Huge ones!
+
+A: Okay, Mr. Miller, I'm pulling up your accounts now. I can see some recent activity that looks concerning. Can you describe the texts and emails you received? What did they say, roughly?
+C: The texts this morning were like, "Urgent: Unusual activity detected on your account. Please click here to verify." And the email from a few days ago was similar, asking me to update my security details via a link. I didn't click on any of them, I'm usually very careful.
+A: That's good you didn't click those links. Those sound like phishing attempts. Now, regarding your phone losing signal yesterday evening, do you remember roughly what time that happened?
+C: Hmm, I'd say around 7 PM, maybe 7:30 PM. I was just settling down for the evening.
+A: Thank you. And when did you last successfully log into your online banking or mobile banking app yourself, using your own device, before yesterday evening?
+C: I think it was yesterday morning, around 9 AM, just to check my balance. Everything was fine then.
+A: Right. And since then, have you shared your PIN, your full password, or any One-Time Passcodes, also known as OTPs, with anyone, even if they claimed to be from the bank or another official organisation?
+C: Absolutely not! I know better than that. I'm very careful with my details. That's why I'm so confused and angry.
+A: I understand. Looking at your account, I can see multiple login attempts and successful logins from an unfamiliar device starting around 8 PM yesterday evening, shortly after your phone lost signal. It appears a new mobile device was registered to your account. This is highly indicative of a SIM swap fraud, where fraudsters convince your mobile network provider to port your number to a new SIM card under their control.
+C: A SIM swap? So that's why my phone stopped working! They got my number?
+A: Precisely. And with your banking credentials, which they likely obtained through a phishing scam – perhaps from that email you mentioned earlier in the week – they've used your number to bypass our two-factor authentication, as the OTPs would have gone to their SIM card.
+C: Oh my God. So what have they done?
+A: I'm seeing several high-value transactions. On your current account, there are three Faster Payments transfers, each for £5,000, to different sort codes and account numbers. These were initiated late last night and early this morning. And on your credit card, I'm seeing multiple online purchases, including two for electronics totalling over £2,000, and several smaller retail transactions.
+C: Five thousand pounds? Each? That's fifteen thousand! And on my credit card too? This is a nightmare.
+
+A: Mr. Miller, please try to remain calm. We will help you with this. My immediate priority is to secure your accounts. I have already placed temporary blocks on your current account and your credit card. I'm also going to block your online banking access and your mobile banking app to prevent any further unauthorised activity. We will need to set up new access for you.
+C: So my money's gone?
+A: Not necessarily. For the credit card transactions, we can initiate a chargeback dispute process immediately. For the Faster Payments, these are harder to reverse once sent, but we will initiate a recall request with the receiving banks. We will treat this as an urgent fraud case. We will also report this to UK Finance's dedicated fraud team.
+C: What do I need to do?
+A: Firstly, please contact your mobile network provider immediately to report the SIM swap and regain control of your phone number. Explain it's a fraud. Secondly, I strongly advise you to report this to Action Fraud, the UK's national reporting centre for fraud and cyber crime. They will give you a crime reference number, which will be useful for us and your mobile provider.
+C: Action Fraud, okay. And my passwords?
+A: Yes, it's crucial that you change all your online banking passwords, email passwords, and any other important online account passwords, especially if you use the same ones across different services. Do this from a secure device, not your phone until you've confirmed it's secure.
+C: This is just… I can't believe this has happened.
+A: I understand this is incredibly stressful, Mr. Miller. We see cases like this, unfortunately, and we have established procedures to help our customers. We will investigate this fully, and we will keep you updated. You are not liable for these unauthorised transactions, provided you haven't acted fraudulently or with gross negligence. Based on what you've told me, you appear to be a victim of sophisticated fraud.
+C: So I'll get my money back?
+A: We will do everything we can. We will launch a full investigation. We will send you an email outlining all the steps we've discussed, including the contact details for Action Fraud and your mobile network provider, along with a fraud case reference number. Please allow 24-48 hours for our fraud team to conduct initial checks, and we will be in touch.
+
+A: Is there anything else I can assist you with right now, Mr. Miller?
+C: No, I think that's everything for now. I just need to get my head around this.
+A: Take your time. Remember to contact your mobile provider and Action Fraud. Your fraud case reference number is FRD-2024-DM-7890.
+C: Thank you, Sarah.
+A: You're welcome, Mr. Miller. Please be assured we are taking this very seriously. Goodbye for now.
+C: Goodbye.
